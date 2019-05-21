@@ -2,7 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
-Based on the game [Paper Rock Scissors Lizard Spock](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors#Additional_weapons) as originally created by [Sam Kass and Karen Bryla](http://www.samkass.com/theories/RPSSL.html)
+Based on the game [Paper Rock Scissors Lizard Spock](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors#Additional_weapons) as originally created by [Sam Kass and Karen Bryla](http://www.samkass.com/theories/RPSSL.html).
+
+![RPSLS](https://github.com/tardisdriver/paper-rock-scissors-lizard-spock-angular/blob/master/src/assets/spock.png?raw=true)
 
 ## Development server
 
