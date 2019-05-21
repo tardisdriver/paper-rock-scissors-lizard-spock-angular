@@ -1,20 +1,147 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar>
+  <span>ROCK</span> <span>PAPER</span><span>SCISSORS</span><span>LIZARD</span
+  ><span id="spock">SPOCK</span>
+  <div id="space">
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+  </div>
+</mat-toolbar>
+<!-- <div>
+  <button mat-fab color="primary" (click)="openDialog()">See Chart</button>
+</div> -->
+<div class="content">
+  <!-- You -->
+  <mat-card style="margin-right:5px">
+    <mat-card-content>
+      <div>
+        <h2>You</h2>
+        <button mat-fab color="primary" class="score score-player">
+          {{ scores[0] }}
+        </button>
+      </div>
+      <h3>Choose your weapon:</h3>
+      <div class="content2">
+        <div class="weapon">
+          <span>
+            <fa-icon
+              [icon]="faHandRock"
+              (click)="pick(0)"
+              [ngClass]="{ selectedWeapon: playerSelected === 0 }"
+            ></fa-icon>
+            Rock
+          </span>
+        </div>
 
+        <div class="weapon">
+          <span>
+            <fa-icon
+              [icon]="faHandPaper"
+              (click)="pick(1)"
+              [ngClass]="{ selectedWeapon: playerSelected === 1 }"
+            ></fa-icon>
+            Paper
+          </span>
+        </div>
+
+        <div class="weapon">
+          <span>
+            <fa-icon
+              [icon]="faHandScissors"
+              (click)="pick(2)"
+              [ngClass]="{ selectedWeapon: playerSelected === 2 }"
+            ></fa-icon>
+            Scissors
+          </span>
+        </div>
+
+        <div class="weapon">
+          <span>
+            <fa-icon
+              [icon]="faHandLizard"
+              (click)="pick(3)"
+              [ngClass]="{ selectedWeapon: playerSelected === 3 }"
+            ></fa-icon>
+            Lizard
+          </span>
+        </div>
+
+        <div class="weapon">
+          <span>
+            <fa-icon
+              [icon]="faHandSpock"
+              (click)="pick(4)"
+              [ngClass]="{ selectedWeapon: playerSelected === 4 }"
+            ></fa-icon>
+            Spock
+          </span>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <!-- Player 2 (the computer) -->
+  <mat-card>
+    <div>
+      <h2 style="font-size:1.2em">Computer</h2>
+      <button
+        mat-fab
+        color="accent"
+        class="score score-computer"
+        style="font-size:1.3em"
+      >
+        {{ scores[1] }}
+      </button>
+    </div>
+    <div *ngIf="computerSelected !== -1" class="flex-container flex-center">
+      <fa-icon
+        class="computer-choice"
+        [icon]="faHandRock"
+        *ngIf="computerSelected === 0"
+      ></fa-icon>
+      <fa-icon
+        class="computer-choice"
+        [icon]="faHandPaper"
+        *ngIf="computerSelected === 1"
+      ></fa-icon>
+      <fa-icon
+        [class="computer-choice"
+        icon]="faHandScissors"
+        *ngIf="computerSelected === 2"
+      ></fa-icon>
+      <fa-icon
+        class="computer-choice"
+        [icon]="faHandLizard"
+        *ngIf="computerSelected === 3"
+      ></fa-icon>
+      <fa-icon
+        class="computer-choice"
+        [icon]="faHandSpock"
+        *ngIf="computerSelected === 4"
+      ></fa-icon>
+    </div>
+  </mat-card>
+</div>
+
+<div
+  *ngIf="!loading && isResultShow"
+  class="flex-container flex-center"
+  style="flex-direction: column; color:white"
+>
+  <div [ngSwitch]="theResult">
+    <ng-template [ngSwitchCase]="1"
+      ><h1 class="result-report">You win!</h1></ng-template
+    >
+    <ng-template [ngSwitchCase]="2"
+      ><h1 class="result-report">You lose!</h1></ng-template
+    >
+    <ng-template [ngSwitchCase]="0"
+      ><h1 class="result-report">You tie!</h1></ng-template
+    >
+  </div>
+  <p>Pick again to continue or</p>
+  <button (click)="reset()" mat-raised-button color="primary">
+    Reset Score
+  </button>
+</div>
