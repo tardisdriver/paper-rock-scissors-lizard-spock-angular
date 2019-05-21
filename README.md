@@ -1,6 +1,8 @@
-# RockPaperScissorsLizardSpock
+# Rock Paper Scissors Lizard Spock
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+
+Based on the game [Paper Rock Scissors Lizard Spock](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors#Additional_weapons) as originally created by [Sam Kass and Karen Bryla](http://www.samkass.com/theories/RPSSL.html)
 
 ## Development server
 
@@ -25,4 +27,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
 # paper-rock-scissors-lizard-spock-angular
