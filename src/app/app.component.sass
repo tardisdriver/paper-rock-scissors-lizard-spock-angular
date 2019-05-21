@@ -1,0 +1,137 @@
+mat-toolbar
+    :font-family 'Saira Extra Condensed'
+    :height 150px
+    :background black
+    :color white
+    :justify-content center !important
+    :flex-wrap wrap
+    span 
+        :padding 0 10px
+        :font-size 2em
+
+#spock
+    :font-family 'Orbitron'
+    :padding 0 10px !important
+    :color green
+    
+.content 
+    :display grid
+    :grid-template-columns 1fr 1fr
+    :padding .5em
+    :background-image url("/assets/container-background.png")
+    :background-size cover
+
+#space, .stars
+    :overflow hidden
+    :position absolute
+    :top 0
+    :bottom 0
+    :right 0
+    :left 0
+
+.stars
+    :background-image radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0))
+    :background-repeat repeat 
+    :background-size 200px 200px
+    :animation zoom 5s infinite
+    :opacity 0
+
+.stars:nth-child(1)
+    :background-position 20% 60%
+    :animation-delay 0s
+
+.stars:nth-child(2)
+    :background-position 20% 60%
+    :animation-delay 1s
+
+.stars:nth-child(3)
+    :background-position -20% -60%
+    :animation-delay 2s
+
+.stars:nth-child(4)
+    :background-position 40% -80%
+    :animation-delay 3s
+
+.stars:nth-child(5)
+    :background-position -20% 30%
+    :animation-delay 4s
+
+@keyframes zoom
+    0%
+        :opacity 0
+        :transform scale(0.5)
+        :animation-timing-function ease-in
+    85%
+        :opacity 1
+        :transform scale(2.8)
+        :animation-timing-function linear 
+    100%
+        :opacity 0
+        :transform scale(3.5)
+
+.flex-container
+    :display flex
+    :width 100%
+
+.flex-center
+    :align-items center 
+    :justify-content center 
+
+.mat-card
+    :background none
+    :color white
+    :text-align center
+    :margin-bottom 53px
+
+.mat-card-content
+    :text-align center 
+
+h2 
+    :font-size 1.4em
+
+h3 
+   :margin 3px 0  
+
+p 
+    :margin 3px 
+    :font-size 1.2em
+
+.score
+    // :margin-top .5em
+    // :margin-left 2em
+    :font-size 1.5em
+    :width 100px
+    :border-radius 5px
+    :background-color black
+    :font-family 'Orbitron'
+
+.score-player
+    :color green
+
+.score-computer
+    :color orangered
+
+fa-icon
+    :cursor pointer 
+    :font-size 2em
+    :padding 9px
+
+.weapon
+    :display flex
+    :flex-direction column
+    :align-items center
+
+.selectedWeapon
+    :color background 
+
+.computer-choice
+    :font-size 3em
+    :margin-top 30px
+
+.result-report
+    :line-height .5em
